@@ -1,29 +1,17 @@
 # tv-abn-maze
 
+Goal:
+To display shows per genre on home page.
+Allow user's to search by TV shows and display results in a new page.
+See TV show details in a new page.
+
+
 ## Project setup
 ```
-yarn install
+npm install
 ```
 
 ### Compiles and hot-reloads for development
 ```
-yarn serve
+npm run serve
 ```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Run your unit tests
-```
-yarn test:unit
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
