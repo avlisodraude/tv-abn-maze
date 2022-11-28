@@ -3,7 +3,7 @@
     <h1>{{ details.name }}</h1>
     <div class="container">
       <div class="image">
-        <img :src="details.image.medium" :alt="details.name" />
+        <img :src="details | getImageUrl" :alt="details.name" />
       </div>
       <div class="main">
         <div class="genders">

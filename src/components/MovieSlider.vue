@@ -4,7 +4,7 @@
     <div class="swiper-wrapper">
       <div v-for="item in theMovies" :key="item.id" class="swiper-slide">
         <a :href="`details/${item.id}`">
-          <img class="img-slider" :src="item.image.medium" :alt="item.name" />
+          <img class="img-slider" :src="item | getImageUrl" :alt="item.name" />
         </a>
       </div>
     </div>

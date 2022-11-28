@@ -19,3 +19,10 @@ Vue.filter("getNetworkName", (str) => {
   }
   return "";
 });
+
+Vue.filter("getImageUrl", (img) => {
+  if (img.image && img.image.medium) {
+    return img.image.medium;
+  }
+  return "https://via.placeholder.com/210x295.png?text=No+image+available";
+});

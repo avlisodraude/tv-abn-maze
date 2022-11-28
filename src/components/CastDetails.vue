@@ -8,7 +8,7 @@
         </p>
       </div>
       <div class="castMember">
-        <img :src="crew.person.image.medium" alt="crew.person.name" />
+        <img :src="crew.person | getImageUrl" alt="crew.person.name" />
       </div>
     </div>
   </div>

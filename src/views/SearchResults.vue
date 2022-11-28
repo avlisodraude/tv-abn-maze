@@ -7,14 +7,7 @@
       <div class="title-image">
         <div class="image">
           <a :href="`/details/${result.show.id}`">
-            <img
-              :src="
-                result.show && result.show.image && result.show.image.medium
-                  ? result.show.image.medium
-                  : 'https://via.placeholder.com/210x295.png?text=No+image+available'
-              "
-              :alt="result.show.name"
-            />
+            <img :src="result.show | getImageUrl" :alt="result.show.name" />
           </a>
         </div>
         <div class="title">{{ result.show.name }}</div>
