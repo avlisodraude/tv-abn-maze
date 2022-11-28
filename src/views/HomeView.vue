@@ -1,18 +1,37 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <MoviesListSlider
+      v-if="movies.length"
+      :movies="movies"
+      msg="Search for your favourite series"
+    />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import MoviesListSlider from "@/components/MoviesListSlider.vue";
+import axios from "axios";
 
 export default {
   name: "HomeView",
   components: {
-    HelloWorld,
+    MoviesListSlider,
+  },
+  created() {
+    axios.get("https://api.tvmaze.com/shows").then((res) => {
+      this.$store.commit("SET_MOVIES", res.data);
+    });
+  },
+  computed: {
+    movies() {
+      return this.$store.getters.getMovies;
+    },
   },
 };
 </script>
+<style>
+.home {
+  margin: 0 auto;
+  max-width: 80%;
+}
+</style>
